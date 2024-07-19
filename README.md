@@ -43,7 +43,7 @@ Kuber Cinemas is a platform where users can browse and book tickets for their fa
 
 ## Contributors
 
-- [Ajay Singh](https://www.ajaysankarsingh.com.np)
+- [Ajay Singh](https://www.ajayshankarsingh.com.np)
 - [Aman Shah](https://github.com/amanshah028)
 - [Nischal Dhakal](https://www.nischaldhakal.com.np)
 - [Utsav Manadhar](https://github.com/utsav28963/Web-Technology/commits?author=utsav28963)
