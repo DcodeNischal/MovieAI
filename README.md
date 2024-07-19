@@ -31,7 +31,7 @@ Kuber Cinemas is a platform where users can browse and book tickets for their fa
 
 2. **Access the website:**
 
-   Open your web browser and navigate to `http://localhost/kuber-cinemas`.
+   Open your web browser and navigate to `http://localhost/MovieAI`.
 
 3. **Explore the features:**
 
