@@ -1,19 +1,52 @@
-# online-movie-booking
-I doveloped this project using Core PHP,HTML,JavaScript,CSS,Bootstrap.
+# Kuber Cinemas
 
-# Note
-1. This project is for college and study only
-2. that is not use for Commercial project
+Kuber Cinemas is a website designed to provide a seamless online movie booking experience. This project is built using HTML, JavaScript, CSS, and PHP, with AI integration for personalized movie recommendations.
 
-# Screenshot
+## Table of Contents
 
-## 1. Home page ##
-![home1](https://user-images.githubusercontent.com/104883953/167260990-670d3197-5c62-44bc-b821-fcc8d0efd36d.jpg)
-![home2](https://user-images.githubusercontent.com/104883953/167261156-947f1206-6d2f-48c5-b3ba-319ff50b2e95.jpg)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Usage](#usage)
+- [Clone the repository](#Clone)
 
-## 2. All Movie ##
-![all movie](https://user-images.githubusercontent.com/104883953/167261026-0c6d020e-7963-4e33-85e9-97b2b118d2e6.jpg)
+## Introduction
 
-## 3. Seat Book ##
-![seat book](https://user-images.githubusercontent.com/104883953/167261039-e45bb084-ed5a-4b43-b8d2-132a16100d41.jpg)
+Kuber Cinemas is a platform where users can browse and book tickets for their favorite movies. The website offers detailed movie information, showtimes, and seat selection. With AI integration, users receive personalized movie recommendations based on their viewing history and preferences, enhancing their browsing experience.
+
+## Features
+
+- Browse movies currently showing
+- View movie details and showtimes
+- Select seats and book tickets
+- User registration and login
+- Admin panel to manage movies and showtimes
+- **AI-powered personalized movie recommendations**
+
+
+## Usage
+
+1. **Start your local server:**
+
+   Start your local server (e.g., Apache) and ensure it's running.
+
+2. **Access the website:**
+
+   Open your web browser and navigate to `http://localhost/kuber-cinemas`.
+
+3. **Explore the features:**
+
+   - Register a new user or log in with existing credentials.
+   - Browse movies, view details, and book tickets.
+   - Receive personalized movie recommendations.
+   - Admin users can log in to manage movies and showtimes.
+
+
+
+
+## Clone the repository
+
+   ```sh
+   git clone https://github.com/DcodeNischal/MovieAI.git
+   cd MovieAI
+
 
