@@ -13,7 +13,7 @@
 <body>
 
   <div class="container">
-  <center><a href="./index.php"><h1 style="display:inline;">CinePulse</h1></a></center>
+    <center><a href="./index.html"><h1>CinePulse</h1></center>
     <div class="title">Registration</div>
     <div class="content">
       <form id="form" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return validate();">
