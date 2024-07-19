@@ -26,7 +26,7 @@ if (!isset($_SESSION['admin'])) {
       		<h2>Customers</h2>
       	</div>
         <div class="col-2">
-          <button data-toggle="modal" data-target="#add_custemer_modal" class="btn btn-primary btn-sm">Add Movie</button>
+          <button data-toggle="modal" data-target="#add_custemer_modal" class="btn btn-primary btn-sm">Add Tickets</button>
         </div>
       </div>
       
@@ -34,17 +34,17 @@ if (!isset($_SESSION['admin'])) {
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>id</th>
-              <th>Name</th>
+              <th>UID</th>
+              <th>UName</th>
               <th>Movie</th>
               <th>Theater</th>
-              <th>Show_time</th>
-              <th>Seat</th>
-              <th>Total Seat</th>
-              <th>Price</th>
-              <th>Payment Date</th>
+              <th>Date</th>
+              <th>Showtime</th>
+              <th>Seats</th>
+              <th>Total seats</th>
+              <th>Total Price</th>
               <th>Booking Date</th>
-              <th>Custemer</th>
+              <th>Customer</th>
             </tr>
           </thead>
           <tbody id="customer_list">
