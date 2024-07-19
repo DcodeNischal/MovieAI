@@ -1,106 +1,156 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title> Login Page</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="site.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="site.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 <div>
-	<div class="parent-container">
+    <div class="form-container">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container" id="sign-up-container">
+                <form action="signup.php" method="POST" onsubmit="return validateSignup()">
+                    <img src="/src/images/logo/logo.png" alt="" class="logo mobile margin"/>
+                    <h1>Create Account</h1>
+                    <input type="text" id="signup-name" name="name" placeholder="Name" />
+                    <input type="email" id="signup-email" name="email" placeholder="Email" />
+                    <input type="password" id="signup-password" name="password" placeholder="Password" />
 
-		<table width="100%" height="100%">
-		<tr>
-			<td align="center" valign="middle">
-				<div class="loginholder">
-        
-					<table style="background-color:white;" class="table-condensed">
-					<tr>
+					<input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" />
 
-  						<a href="./index.html" style = "text-decoration:none;"><h2>CinePulse</h2></a>
-					</tr>
-					<tr>
-						<td><b>User Id:</b></td>
-					</tr>
-					<tr>
-						<td><input type="text" class="inputbox" id="username"/>
-              <br><p id="nameerror"></p></td>
-					</tr>
-					<tr>
-						<td><b>Password:</b></td>
-					</tr>
-					<tr>
-						<td><input type="text" class="inputbox" id="password" />
-              <br><p id="passerror"></p><div id="msg"></div> </td>
-            
-					</tr>
-					<tr>
-						<td align="center"><br />
+					
 
-						 <button class="btn-normal" id="login">LOGIN</button>
-						</td>
-					</tr>
-					<tr>
-						<td align="left"><br />
-						<span class="forgetpassword"><a href="forget_password.php"> Forget your Password ?</a></span></td>
-
-					</tr>
-					<td><a href="register_form.php"> Resiter now</a></td>
-					<tr>
-						<td><hr style="background-color:blue;height:1px;margin:0px;"/></td>
-					</tr>
-					<tr>
-						<td align="center"></td>
-					</tr>
-
-					</table>
-        
-				</div>
-			</td>
-		</tr>
-		</table>
-	</div>
+                    <button type="submit">Sign Up</button>
+                    <p class="mobile">
+                        Have an account? Click <a id="signIn-Mobile" href="#">Here</a>.
+                    </p>
+                    <div id="signup-error" class="error"></div>
+                </form>
+            </div>
+            <div class="form-container sign-in-container" id="sign-in-container">
+                <form action="login.php" method="POST" onsubmit="return validateSignin()">
+                    <img src="/src/images/logo/logo.png" alt="" class="logo mobile margin"/>
+                    <h1>Sign in</h1>
+                    <input id="signin-username" name="username" type="text" placeholder="Username" />
+                    <input id="signin-password" name="password" type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <button type="submit">Sign In</button>
+                    <p class="mobile">
+                        New user? Click <a id="signUp-Mobile" href="#">Here</a>.
+                    </p>
+                    <div id="signin-error" class="error"></div>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <img src="img/image.png" alt="" class="logo"/>
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <img src="img/image.png" alt="" class="logo"/>
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript">
+    $(document).ready(function() {
+        const signUpButton = document.getElementById("signUp");
+        const signInButton = document.getElementById("signIn");
+        const container = document.getElementById("container");
+        const signUpMobileLink = document.getElementById("signUp-Mobile");
+        const signInMobileLink = document.getElementById("signIn-Mobile");
 
-	$(document).ready(function(){
-  $("#login").click(function(){
-    var username = $("#username").val().trim();
-    var password = $("#password").val().trim();
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("right-panel-active");
+        });
 
-   
-     if( username == "" )
- {
-  error = " <font color='red'>!Requrie Name.</font> ";
-  document.getElementById( "nameerror" ).innerHTML = error;
-  return false;
- }
-  
-  if( password == "")
- {
-  error = " <font color='red'>!Requrie Email.</font> ";
-  document.getElementById( "passerror" ).innerHTML = error;
-  return false;
- }
-    $.ajax({
-      url:'login.php',
-      type:'post',
-      data:{username:username,password:password},
-      success:function(response){
-          if(response == 1){
-                                    window.location = "index.php";
-                                }else{
-                                     error = " <font color='red'>!Invalid UserId.</font> ";
-                                     document.getElementById( "msg" ).innerHTML = error;
-                                      return false;
-                                }
-        $("#message").html(response);
-      }
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        signUpMobileLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.getElementById("sign-up-container").style.display = "block";
+            document.getElementById("sign-in-container").style.display = "none";
+        });
+
+        signInMobileLink.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.getElementById("sign-in-container").style.display = "block";
+            document.getElementById("sign-up-container").style.display = "none";
+        });
     });
-  });
-});
+
+    function validateSignin() {
+        var username = $("#signin-username").val().trim();
+        var password = $("#signin-password").val().trim();
+        var error = "";
+
+        if (username == "") {
+            error = "<font color='red'>Username is required.</font>";
+            $("#signin-error").html(error);
+            return false;
+        }
+        if (password == "") {
+            error = "<font color='red'>Password is required.</font>";
+            $("#signin-error").html(error);
+            return false;
+        }
+        return true;
+    }
+
+    function validateSignup() {
+        var name = $("#signup-name").val().trim();
+        var email = $("#signup-email").val().trim();
+        var password = $("#signup-password").val().trim();
+        var error = "";
+
+        if (name == "") {
+            error = "<font color='red'>Name is required.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (name.length < 3 || name.length > 20) {
+            error = "<font color='red'>Name must be between 3 and 20 characters.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (!isNaN(name)) {
+            error = "<font color='red'>Name must be a string.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (email == "") {
+            error = "<font color='red'>Email is required.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (email.indexOf('@') <= 0 || email.lastIndexOf('.') <= email.indexOf('@') + 1 || email.lastIndexOf('.') >= email.length - 1) {
+            error = "<font color='red'>Invalid email format.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (password == "") {
+            error = "<font color='red'>Password is required.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        if (password.length < 3 || password.length > 10) {
+            error = "<font color='red'>Password must be between 3 and 10 characters.</font>";
+            $("#signup-error").html(error);
+            return false;
+        }
+        return true;
+    }
 </script>
 </body>
 </html>
