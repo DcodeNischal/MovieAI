@@ -1,39 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
+    <meta charset="UTF-8">
     <title>Login Page</title>
-    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="site.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <div>
     <div class="form-container">
         <div class="container" id="container">
             <div class="form-container sign-up-container" id="sign-up-container">
-                <form action="signup.php" method="POST" onsubmit="return validateSignup()">
-                    <img src="/src/images/logo/logo.png" alt="" class="logo mobile margin"/>
-                    <h1>Create Account</h1>
-                    <input type="text" id="signup-name" name="name" placeholder="Name" />
-                    <input type="email" id="signup-email" name="email" placeholder="Email" />
-                    <input type="password" id="signup-password" name="password" placeholder="Password" />
-
-					<input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" />
-
-					
-
-                    <button type="submit">Sign Up</button>
-                    <p class="mobile">
-                        Have an account? Click <a id="signIn-Mobile" href="#">Here</a>.
-                    </p>
-                    <div id="signup-error" class="error"></div>
+                <form id="form" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return validateSignup()">
+                    <center><a href="./index.html"><h1>CinePulse</h1></a></center>
+                    <div class="title">Registration</div>
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">UserName</span>
+                            <input type="text" id="username" name="username" placeholder="Enter your name">
+                            <p id="nameerror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Email</span>
+                            <input type="text" id="email" name="email" placeholder="Enter your Email">
+                            <p id="emailerror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="text" id="number" name="number" placeholder="Enter your Phone Number">
+                            <p id="numbererror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">City</span>
+                            <input type="text" id="city" name="city" placeholder="Enter your City">
+                            <p id="cityerror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Password</span>
+                            <input type="password" id="password" name="password" placeholder="Enter your password">
+                            <p id="passworderror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Confirm Password</span>
+                            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password">
+                            <p id="cpassworderror"></p>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Image uploaded (Option)</span>
+                            <input type="file" id="image" name="image">
+                        </div>
+                    </div>
+                    <p id="error_para"></p>
+                    <div id="err"></div>
+                    <div class="button">
+                        <input type="submit" value="Register" id="submit" name="submit">
+                    </div>
                 </form>
             </div>
             <div class="form-container sign-in-container" id="sign-in-container">
                 <form action="login.php" method="POST" onsubmit="return validateSignin()">
                     <img src="/src/images/logo/logo.png" alt="" class="logo mobile margin"/>
                     <h1>Sign in</h1>
-                    <input id="signin-username" name="username" type="text" placeholder="Username" />
-                    <input id="signin-password" name="password" type="password" placeholder="Password" />
+                    <input id="signin-username" name="username" type="text" placeholder="Username">
+                    <input id="signin-password" name="password" type="password" placeholder="Password">
                     <a href="#">Forgot your password?</a>
                     <button type="submit">Sign In</button>
                     <p class="mobile">
@@ -109,44 +140,72 @@
     }
 
     function validateSignup() {
-        var name = $("#signup-name").val().trim();
-        var email = $("#signup-email").val().trim();
-        var password = $("#signup-password").val().trim();
+        var name = $("#username").val().trim();
+        var email = $("#email").val().trim();
+        var number = $("#number").val().trim();
+        var city = $("#city").val().trim();
+        var password = $("#password").val().trim();
+        var cpassword = $("#cpassword").val().trim();
         var error = "";
 
         if (name == "") {
             error = "<font color='red'>Name is required.</font>";
-            $("#signup-error").html(error);
+            $("#nameerror").html(error);
             return false;
         }
         if (name.length < 3 || name.length > 20) {
             error = "<font color='red'>Name must be between 3 and 20 characters.</font>";
-            $("#signup-error").html(error);
+            $("#nameerror").html(error);
             return false;
         }
         if (!isNaN(name)) {
             error = "<font color='red'>Name must be a string.</font>";
-            $("#signup-error").html(error);
+            $("#nameerror").html(error);
             return false;
         }
         if (email == "") {
             error = "<font color='red'>Email is required.</font>";
-            $("#signup-error").html(error);
+            $("#emailerror").html(error);
             return false;
         }
         if (email.indexOf('@') <= 0 || email.lastIndexOf('.') <= email.indexOf('@') + 1 || email.lastIndexOf('.') >= email.length - 1) {
             error = "<font color='red'>Invalid email format.</font>";
-            $("#signup-error").html(error);
+            $("#emailerror").html(error);
+            return false;
+        }
+        if (number == "") {
+            error = "<font color='red'>Phone number is required.</font>";
+            $("#numbererror").html(error);
+            return false;
+        }
+        if (number.length != 10 || isNaN(number)) {
+            error = "<font color='red'>Phone number must be 10 digits and numeric.</font>";
+            $("#numbererror").html(error);
+            return false;
+        }
+        if (city == "") {
+            error = "<font color='red'>City is required.</font>";
+            $("#cityerror").html(error);
             return false;
         }
         if (password == "") {
             error = "<font color='red'>Password is required.</font>";
-            $("#signup-error").html(error);
+            $("#passworderror").html(error);
             return false;
         }
         if (password.length < 3 || password.length > 10) {
             error = "<font color='red'>Password must be between 3 and 10 characters.</font>";
-            $("#signup-error").html(error);
+            $("#passworderror").html(error);
+            return false;
+        }
+        if (cpassword == "") {
+            error = "<font color='red'>Confirm Password is required.</font>";
+            $("#cpassworderror").html(error);
+            return false;
+        }
+        if (cpassword != password) {
+            error = "<font color='red'>Passwords do not match.</font>";
+            $("#cpassworderror").html(error);
             return false;
         }
         return true;
