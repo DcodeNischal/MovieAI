@@ -63,8 +63,8 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="login_form.php">Sign in</a>
-                                <a href="register_form.php">Register</a>
+                                <a href="login_form.php">Log in</a>
+                                
                             </div>
                            
                         </div>
@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.php"><h2>CinePulse</h2></a>
+                        <a href="./index.php"><h2>Kuber Cinemas</h2></a>
                     </div> 
                 </div>
                 <div class="col-lg-9 col-md-9">

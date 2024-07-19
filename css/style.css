@@ -1,33 +1,3 @@
-	/******************************************************************
-  Template Name: Male Fashion
-  Description: Male Fashion - ecommerce teplate
-  Author: Colorib
-  Author URI: https://www.colorib.com/
-  Version: 1.0
-  Created: Colorib 
-******************************************************************/
-
-/*------------------------------------------------------------------
-[Table of contents]
-
-1.  Template default CSS
-	1.1	Variables
-	1.2	Mixins
-	1.3	Flexbox
-	1.4	Reset
-2.  Helper Css
-
-5.  Banner Section
-6.  Product Section
-7.  Intagram Section
-8.  Latest Section
-9.  Contact
-10.  Footer Style
--------------------------------------------------------------------*/
-
-/*----------------------------------------*/
-/* Template default CSS
-/*----------------------------------------*/
 
 html,
 body {
@@ -1084,7 +1054,7 @@ div.seatCharts-container {
 }
 
 .content-table tbody tr:nth-of-type(even){
-	background-color: $f3f3f3;
+	background-color: #f3f3f3;
 }
 
 .content-table tbody tr:last-of-type{
@@ -1125,8 +1095,10 @@ div.seatCharts-container {
 -----------------------*/
 
 .footer {
-	background: #111111;
+	background: white;
+	color: #000;
 	padding-top: 70px;
+	box-shadow: 0px 5px 5px 10px rgba(0, 0, 0, 0.7);
 	margin-top: 20px;
 }
 
@@ -1143,7 +1115,7 @@ div.seatCharts-container {
 }
 
 .footer__about p {
-	color: #b7b7b7;
+	color: #000;
 	margin-bottom: 30px;
 }
 
@@ -1152,7 +1124,7 @@ div.seatCharts-container {
 }
 
 .footer__widget h6 {
-	color: #ffffff;
+	color: #000;
 	font-size: 15px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -1166,12 +1138,12 @@ div.seatCharts-container {
 }
 
 .footer__widget ul li a {
-	color: #b7b7b7;
+	color: #000;
 	font-size: 15px;
 }
 
 .footer__widget .footer__newslatter p {
-	color: #b7b7b7;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form {
@@ -1181,7 +1153,7 @@ div.seatCharts-container {
 .footer__widget .footer__newslatter form input {
 	width: 100%;
 	font-size: 15px;
-	color: #3d3d3d;
+	color: #000;
 	background: transparent;
 	border: none;
 	padding: 15px 0;
@@ -1189,23 +1161,23 @@ div.seatCharts-container {
 }
 
 .footer__widget .footer__newslatter form input::-webkit-input-placeholder {
-	color: #3d3d3d;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form input::-moz-placeholder {
-	color: #3d3d3d;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form input:-ms-input-placeholder {
-	color: #3d3d3d;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form input::-ms-input-placeholder {
-	color: #3d3d3d;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form input::placeholder {
-	color: #3d3d3d;
+	color: #000;
 }
 
 .footer__widget .footer__newslatter form button {
@@ -1220,13 +1192,13 @@ div.seatCharts-container {
 }
 
 .footer__copyright__text {
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid black;
 	padding: 20px 0;
 	margin-top: 40px;
 }
 
 .footer__copyright__text p {
-	color: #b7b7b7;
+	color: black;
 	margin-bottom: 0;
 }
 
@@ -1588,6 +1560,7 @@ div.seatCharts-container {
 		text-align: center;
 		margin-top: 20px;
 	}
+}
 	
 
 	
@@ -1609,4 +1582,5 @@ div.seatCharts-container {
 }
 input .larger{
 	margin-right: 100px;
+}
 }
