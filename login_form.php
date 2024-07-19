@@ -14,48 +14,40 @@
         <div class="container" id="container">
             <div class="form-container sign-up-container" id="sign-up-container">
                 <form id="form" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return validateSignup()">
-                    <center><a href="./index.html"><h1>CinePulse</h1></a></center>
-                    <div class="title">Registration</div>
+                    <center><h1>Sign Up</h1></center>
                     <div class="user-details">
                         <div class="input-box">
-                            <span class="details">UserName</span>
-                            <input type="text" id="username" name="username" placeholder="Enter your name">
+                            <input type="text" id="username" class="inputmargin" name="username" placeholder="Enter your name">
                             <p id="nameerror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">Email</span>
-                            <input type="text" id="email" name="email" placeholder="Enter your Email">
+                            <input type="text" id="email" class="inputmargin" name="email" placeholder="Enter your Email">
                             <p id="emailerror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">Phone Number</span>
-                            <input type="text" id="number" name="number" placeholder="Enter your Phone Number">
+                            <input type="text" id="number" class="inputmargin" name="number" placeholder="Enter your Phone Number">
                             <p id="numbererror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">City</span>
-                            <input type="text" id="city" name="city" placeholder="Enter your City">
+                            <input type="text" class="inputmargin"  id="city" name="city" placeholder="Enter your City">
                             <p id="cityerror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">Password</span>
-                            <input type="password" id="password" name="password" placeholder="Enter your password">
+                            <input type="password" class="inputmargin"  id="password" name="password" placeholder="Enter your password">
                             <p id="passworderror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">Confirm Password</span>
-                            <input type="password" id="cpassword" name="cpassword" placeholder="Confirm your password">
+                            <input type="password" class="inputmargin"  id="cpassword" name="cpassword" placeholder="Confirm your password">
                             <p id="cpassworderror"></p>
                         </div>
                         <div class="input-box">
-                            <span class="details">Image uploaded (Option)</span>
-                            <input type="file" id="image" name="image">
+                            <input type="file" class="inputmargin"  id="image" name="image">
                         </div>
                     </div>
                     <p id="error_para"></p>
                     <div id="err"></div>
                     <div class="button">
-                        <input type="submit" value="Register" id="submit" name="submit">
+                        <input type="submit" value="Register" id="submit" class="signupbth" name="submit">
                     </div>
                 </form>
             </div>
@@ -63,8 +55,8 @@
                 <form action="login.php" method="POST" onsubmit="return validateSignin()">
                     <img src="/src/images/logo/logo.png" alt="" class="logo mobile margin"/>
                     <h1>Sign in</h1>
-                    <input id="signin-username" name="username" type="text" placeholder="Username">
-                    <input id="signin-password" name="password" type="password" placeholder="Password">
+                    <input id="signin-username" class="inputmargin"  name="username" type="text" placeholder="Username">
+                    <input id="signin-password" class="inputmargin"  name="password" type="password" placeholder="Password">
                     <a href="#">Forgot your password?</a>
                     <button type="submit">Sign In</button>
                     <p class="mobile">
