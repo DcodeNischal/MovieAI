@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->isSMTP();
                 $mail->Host = 'smtp.gmail.com';
                 $mail->SMTPAuth = true;
-                $mail->Username = 'nischal.201720@ncit.edu.np';
-                $mail->Password = 'ojdckkrwsumzunrl';
+                $mail->Username = 'youremail@gmail.com';
+                $mail->Password = 'your password';
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mail->Port = 465;
-                $mail->setFrom('nischal.201720@ncit.edu.np', 'Nischal Dhakal');
+                $mail->setFrom('youremail@gmail.com', 'Nischal Dhakal');
                 $mail->addAddress($email);
                 $mail->isHTML(true);
                 $mail->Subject = 'Password Reset Code';
