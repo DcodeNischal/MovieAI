@@ -7,7 +7,7 @@
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
-    <div class="offcanvas-menu-wrapper">
+    <div class="offcanvas-menu-wrapper" >
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <a href="login.html">Sign in</a>
@@ -24,7 +24,7 @@
     <!-- Header Section Begin -->
     <header class="header">
         <div class="header__top">
-            <div class="container">
+            <div class="container1">
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         
@@ -35,7 +35,7 @@
                         $uname = $_SESSION['uname'];
                         $result = mysqli_query($conn,"SELECT * FROM user WHERE username ='".$uname."'");
 
-                ?>
+                 ?>
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
@@ -59,7 +59,7 @@
                     </div>
                         <?php
                     }else{
-                ?>
+                 ?>
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__links">
@@ -76,21 +76,21 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container1">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./index.php"><h2>Kuber Cinemas</h2></a>
+                    <a href="#"><div class="image"></div>Kuber<span>cinemas.</span></a>
                     </div> 
                 </div>
-                <div class="col-lg-9 col-md-9">
-                    <nav class="header__menu mobile-menu">
+                <div class="col-lg-9 col-md-9" >
+                    <nav class="header__menu mobile-menu" style="margin-right:100px;">
                         <ul>
                             <li><a href="./index.php">Home</a></li>
                             <li><a href="allmovie.php">All Movie</a></li>
                             <li><a href="about.php">About US</a></li>
                             <li><a href="./feedback.php">Feedback</a></li>
-                            <li><a href="./contact.php">Contacts</a></li>
+                            <li><a href="./contact.php">Contacts</a><li><a href="./myticket.php">My Tickets</a></li>
                         </ul>
                     </nav>
                 </div>

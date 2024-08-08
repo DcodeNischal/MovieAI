@@ -10,7 +10,7 @@ session_start();
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Feeback Page</title>
+    <title>Feeback</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -36,14 +36,14 @@ session_start();
 <?php
 include("header.php");
 ?>
-  <div class="content">    
+  <div class="content" style="margin:60px;">    
     <div class="ch3ontainer">      
       <div class="row justify-content-center">
         <div class="col-md-10">
            <div class="row align-items-center">
             <div class="col-lg-7 mb-5 mb-lg-0">
 
-              <h2 class="mb-5">Fill the form. <br> It's easy.</h2>
+              <h2 class="mb-5">Fill the form.</h2>
               <form onsubmit="return feedbackvalidate();">
             
                 <div class="row">
@@ -87,7 +87,7 @@ if (!isset($_SESSION['uname'])) {
 ?>
                 <div class="row">
                   <div class="col-md-12">
-                              <button type="button" id="feedbackform" class="btn btn-primary">Send Massage</button>          
+                              <button type="button" id="feedbackform" class="btn btn-primary" style="background-color:orange; color:white; border-radius:15px; border:none;">Send Massage</button>          
                   </div>
                 </div>
 <?php }

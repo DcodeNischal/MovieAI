@@ -7,6 +7,26 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Dashboard Page</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      .table-responsive{
+        margin-top:25px;
+        
+      }
+      .table-responsive .table-striped td{
+        background-color: white;
+        font-size:17px;
+      }
+      .table-responsive .table-striped th{
+        border:none;
+        font-size:20px;
+
+
+      }
+    </style>
+</head>
 
 <?php 
 session_start();  
@@ -20,19 +40,19 @@ include "./templates/top.php";
  
 <?php include "./templates/navbar.php"; ?>
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:50px;">
   <div class="row">
     
     <?php include "./templates/sidebar.php"; ?>
 
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
-      <h2>Total Admins</h2>
+      <h2>Admin Details</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>#</th>
+              <th>S.N</th>
               <th>Name</th>
               <th>Email</th>
               <th>Status</th>

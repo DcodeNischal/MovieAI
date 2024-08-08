@@ -12,7 +12,7 @@ session_start();
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Page</title>
+    <title>Contact Us</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -37,22 +37,22 @@ session_start();
     ?>
 
     <!-- Contact Section Begin -->
-    <section class="contact spad">
+    <section class="contact spad" style="margin-bottom:130px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__text">
                         <div class="section-title">
-                            <span>Information</span>
                             <h2>Contact Us</h2>
-                            <p>As you might expect of a company that began as a high-end interiors contractor, we pay
-                                strict attention.</p>
+
                         </div>
                         <ul>
                             <li>
-                                <h4>Surendranagar</h4>
-                                <p>Inox Cinema, Near Upashna Circle, Surendranagar.  <br />+91 187-654-3210
-                                    <br />+91 258-963-1470</p>
+                                <h4>Balkumari, lalitpur</h4>
+                                <p style="font-size:20px;">Kuber Cinemas, Ncit College, Balkumari. <br>Email: kubercinemas.com.np <br />+977-9823192305
+                                    <br />+977-9862405060
+                                <br>
+                                </p>
                             </li>
                         
                         </ul>

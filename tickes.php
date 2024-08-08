@@ -1,4 +1,4 @@
- <a href="logout.php"><font color="blue">Log Out</font></a><br>
+<a href="logout.php"><font color="blue">Log Out</font></a><br>
   <a href="index.php"><font color="blue">Back To Home</font></a>
   <!DOCTYPE html>
   <html>

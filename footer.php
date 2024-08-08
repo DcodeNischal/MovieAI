@@ -1,5 +1,5 @@
  <!-- Footer Section Begin -->
-    <footer class="footer" >
+    <footer class="footer" style="border-radius:15px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -8,7 +8,7 @@
                             <a href="#"><h2 style = "color:black";>Kuber Cinemas</h2></a>
                         </div>
                         <p style="font-size:25px";>Payment Partner<p>
-                        <a href="#"><img src="img/khalti.png" alt="app" style = "height:40px"; ></a>
+                        <a href="#"><img src="img/khalti.png" alt="app" style = "height:40px; " ></a>
                     </div>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">

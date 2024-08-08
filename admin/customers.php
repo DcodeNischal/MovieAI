@@ -6,7 +6,42 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Customer Page</title>
+    <style>
+        .container-fluid{
+            margin-top:40px;
+            
+        }
+         .btn{
+            background-color:orange;
+            border:none;
+            margin-top:40px;
+            border-radius:10px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+            padding:10px;
+            margin-left:15px;
+        }
+        .btn:hover{
+            background-color:orange;
+
+        }
+        .table-responsive{
+        margin-top:25px;
+        
+      }
+      .table-responsive .table-striped td{
+        background-color: white;
+        font-size:17px;
+      }
+      .table-responsive .table-striped th{
+        border:none;
+        font-size:20px;
+
+
+      }
+    </style>
 
 
 <?php session_start();
@@ -23,26 +58,24 @@ if (!isset($_SESSION['admin'])) {
 
       <div class="row">
       	<div class="col-10">
-      		<h2>Customers</h2>
+      		<h2>Tickets</h2>
       	</div>
-        <div class="col-2">
-          <button data-toggle="modal" data-target="#add_custemer_modal" class="btn btn-primary btn-sm">Add Tickets</button>
-        </div>
+        
       </div>
       
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>UID</th>
-              <th>UName</th>
+              <th>id</th>
+              <th>Name</th>
               <th>Movie</th>
               <th>Theater</th>
-              <th>Date</th>
-              <th>Showtime</th>
-              <th>Seats</th>
-              <th>Total seats</th>
-              <th>Total Price</th>
+              <th>Show_time</th>
+              <th>Seat</th>
+              <th>Total Seat</th>
+              <th>Price</th>
+              <th>Payment Date</th>
               <th>Booking Date</th>
               <th>Customer</th>
             </tr>
@@ -51,7 +84,7 @@ if (!isset($_SESSION['admin'])) {
            <tbody id="product_list">
             <?php
 include_once 'Database.php';
-$result = mysqli_query($conn,"SELECT c.id,c.movie,c.booking_date,c.show_time,c.seat,c.totalseat,c.price,c.payment_date,c.custemer_id,u.username,t.theater FROM customers c INNER JOIN user u on c.uid = u.id INNER JOIN theater_show t on c.show_time = t.show");
+$result = mysqli_query($conn,"SELECT c.id,c.movie,c.booking_date,c.show_time,c.seat,c.totalseat,c.price,c.payment_date,c.custemer_id,u.username FROM customers c INNER JOIN user u on c.uid = u.id");
 
 if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_array($result)) {
@@ -60,7 +93,7 @@ if (mysqli_num_rows($result) > 0) {
               <td><?php echo $row['id'];?></td>
               <td><?php echo $row['username'];?></td>
               <td><?php echo $row['movie'];?></td>
-              <td><?php echo $row['theater'];?></td>
+              
               <td><?php echo $row['booking_date'];?></td>
               <td><?php echo $row['show_time'];?></td>
               <td><?php echo $row['seat'];?></td>

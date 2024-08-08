@@ -37,8 +37,8 @@ if(isset($_POST["action"]))
 			if($row['action']== "running"){
 			$output .= '
 			<div class="col-lg-4 col-md-5 col-sm-6">
-				<div style="border:1px solid #ccc; border-radius:5px; padding:16px; margin-bottom:1px; height:450px;">
-					<img src="admin/image/'. $row['image'] .'" alt="" class="resize" style="height:200px;" >
+				<div  style="margin-bottom:1px; height:500px; border-radius:15px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25); ">
+					<img src="admin/image/'. $row['image'] .'" alt="" class="resize" style="height:250px; width:150px; margin:20px; object-fit:cover;border-radius:15px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);" >
 					<p align="center"><strong><h4>'. $row['movie_name'] .'</h4></strong></p>
 					
 					Directer : '. $row['directer'] .' <br />
@@ -46,7 +46,7 @@ if(isset($_POST["action"]))
 					Language : '. $row['language'] .'</p>
 					
 				</div>
-					<a href="movie_details.php?pass='.$row['id'].'" class="btn btn-primary" style="margin-left: 40px;margin-top: -80px;">Book Now</a>
+					<a href="movie_details.php?pass='.$row['id'].'" class="btn btn-primary" style="margin-left: -15px;margin-top: -90px;border-radius:15px; background-color:orange; border:none; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">Book Now</a>
 			</div>
 			';
 
@@ -55,8 +55,8 @@ if(isset($_POST["action"]))
 		if($row['action']== "upcoming"){
 			$output .= '
 			<div class="col-lg-4 col-md-5 col-sm-6">
-				<div style="border:1px solid #ccc; border-radius:5px; padding:16px; margin-bottom:1px; height:450px;">
-					<img src="admin/image/'. $row['image'] .'" alt="" class="resize" style="height:200px;" >
+				<div style="margin-bottom:1px; height:500px; border-radius:15px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);">
+					<img src="admin/image/'. $row['image'] .'" alt="" class="resize" style="height:250px; width:150px; margin:20px; object-fit:cover;border-radius:15px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);" >
 					<p align="center"><strong><h4>'. $row['movie_name'] .'</h4></strong></p>
 					
 					Directer : '. $row['directer'] .' <br />
@@ -64,7 +64,7 @@ if(isset($_POST["action"]))
 					Language : '. $row['language'] .'</p>
 					
 				</div>
-					<a href="movie_details.php?pass='.$row['id'].'" class="btn btn-primary" style="margin-left: 40px;margin-top: -80px;">Upcoming</a>
+					<a href="movie_details.php?pass='.$row['id'].'" class="btn btn-primary" style="margin-left: -15px;border-radius:15px;  margin-top: -90px; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25); background-color:orange; border:none;">Upcoming</a>
 			</div>
 			';
 		}

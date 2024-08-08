@@ -7,7 +7,41 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Feedback Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .container-fluid{
+            margin-top:40px;
+            
+        }
+         .btn{
+            background-color:orange;
+            border:none;
+            margin-top:40px;
+            border-radius:10px;   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+            padding:10px;
+            margin-left:15px;
+        }
+        .btn:hover{
+            background-color:orange;
 
+        }
+        .table-responsive{
+        margin-top:25px;
+        
+      }
+      .table-responsive .table-striped td{
+        background-color: white;
+        font-size:17px;
+      }
+      .table-responsive .table-striped th{
+        border:none;
+        font-size:20px;
+
+
+      }
+    </style>
+
+  </head>
 
 <?php session_start(); 
 if (!isset($_SESSION['admin'])) {
@@ -25,20 +59,17 @@ if (!isset($_SESSION['admin'])) {
       	<div class="col-10">
       		<h2>Feedback</h2>
       	</div>
-      	<div class="col-2">
-      		<a href="#" data-toggle="modal" data-target="#add_feedback_modal" class="btn btn-primary btn-sm">Feedback detail</a>
-      	</div>
+      	
       </div>
       
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th>id</th>
-              <th>Name</th>
-              <th>email</th>
-              <th>subject</th>
-              <th>massage</th>
+              <th>ID</th>
+              <th>name</th>
+              <th>Email</th>
+              <th>Message</th>
             </tr>
           </thead>
           <tbody id="product_list">
@@ -56,8 +87,7 @@ if (mysqli_num_rows($result) > 0) {
               <td><?php echo $row['massage'];?></td>
               
               
-              <td><button data-toggle="modal" type="button" data-target="#edit_feedback_modal<?php echo $id;?>" class="btn btn-primary btn-sm">Edit Movie</button></td>
-              <td><button data-toggle="modal" type="button" data-target="#delete_feedback_modal<?php echo $id;?>" class="btn btn-danger btn-sm">Delete Movie</button></td>
+             
             </tr>
 
  <div class="modal fade" id="delete_feedback_modal<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,14 +99,7 @@ if (mysqli_num_rows($result) > 0) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form id="insert_movie" action="insert_data.php" method="post">
-          <h4> Yor Sour This id "<?php echo $row['id'];?>" is delete.</h4>
-          <input type="hidden" name="id" value="<?php echo $row['id'];?>">
-          <input type="submit" name="deletefeedback" id="deletefeedback" value="OK" class="btn btn-primary">
-          </form>
-
-      </div>
+      
     </div>
   </div>
 </div> 
@@ -90,38 +113,7 @@ if (mysqli_num_rows($result) > 0) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form id="insert_movie" action="insert_data.php" method="post" enctype="multipart/form-data">
-          <div class="row">
-            <div class="col-12">
-              <div class="form-group">
-                <label>Name</label>
-                <input type="hidden" name="e_id" value="<?php echo $row['id'];?>">
-                <input class="form-control" name="edit_feedback_name" id="edit_name" value="<?php echo $row['name'];?>">
-                <small></small>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-group">
-                <label>Email</label>
-                <input class="form-control" name="edit_feedback_email" id="edit_email" value="<?php echo $row['email'];?>">
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="form-group">
-                <label>Massage</label>
-                <input class="form-control" name="edit_feedback_massage" id ="edit_massage" value="<?php echo $row['massage']; ?>">
-              </div>
-            </div>
-            <div class="col-12">
-            
-              <input type="submit" name="updatefeedback" id="updatefeedback" value="update" class="btn btn-primary">
-            </div>
-          </div>
-          
-        </form>
-        <div id="preview"></div>
-      </div>
+      
     </div>
   </div>
 </div> 

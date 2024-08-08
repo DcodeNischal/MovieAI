@@ -14,7 +14,7 @@ include('database_connection.php');
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>All movie page</title>
+    <title>Filter Movie</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -46,8 +46,8 @@ include('database_connection.php');
         	
             <div class="col-md-3">                				
 				
-				<div class="list-group">
-					<h3>categroy</h3>
+				<div class="list-group" >
+					<h3 style="margin-bottom:20px;">Categroy</h3>
                     <?php
 
                     $query = "
@@ -59,7 +59,7 @@ include('database_connection.php');
                     foreach($result as $row)
                     {
                     ?>
-                    <div class="list-group-item checkbox">
+                    <div class="list-group-item checkbox" style="border:none;">
                         <label><input type="checkbox" class="common_selector categroy" value="<?php echo $row['categroy']; ?>" > <?php echo $row['categroy']; ?></label>
                     </div>
                     <?php    
@@ -69,7 +69,7 @@ include('database_connection.php');
                 </div>
 				
 				<div class="list-group">
-					<h3> language</h3>
+					<h3 style="margin-top:30px; margin-bottom:20px;"> language</h3>
 					<?php
                     $query = "
                     SELECT DISTINCT(language) FROM add_movie WHERE status = '1' ORDER BY language DESC
@@ -80,7 +80,7 @@ include('database_connection.php');
                     foreach($result as $row)
                     {
                     ?>
-                    <div class="list-group-item checkbox">
+                    <div class="list-group-item checkbox" style="border:none;">
                         <label><input type="checkbox" class="common_selector language" value="<?php echo $row['language']; ?>"  > <?php echo $row['language']; ?></label>
                     </div>
                     <?php
@@ -89,9 +89,9 @@ include('database_connection.php');
                 </div>
             </div>
 
-            <div class="col-md-9">
-            	<br />
-                <div class="row filter_data">
+            <div class="col-md-9" style="text-align:center; ">
+            	
+                <div class="row filter_data" >
 
                 </div>
             </div>

@@ -1,3 +1,17 @@
+<?php
+$error = '';
+
+// Check if 'error' parameter is set in the URL
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+// Display the error message if it exists
+if (!empty($error)) {
+    echo "<div class='error-message'>" . htmlspecialchars($error) . "</div>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -10,7 +24,7 @@
 </head>
 <body>
 <div>
-    <div class="form-container">
+    <div class="form-container" style="margin-left:-550px;">
         <div class="container" id="container">
             <div class="form-container sign-up-container" id="sign-up-container">
                 <form id="form" action="register.php" method="post" enctype="multipart/form-data" onsubmit="return validateSignup()">
@@ -45,7 +59,9 @@
                         </div>
                     </div>
                     <p id="error_para"></p>
-                    <div id="err"></div>
+                    <div id="err" style="color:red;">
+                        
+                    </div>
                     <div class="button">
                         <input type="submit" value="Register" id="submit" class="signupbth" name="submit">
                     </div>
@@ -57,12 +73,14 @@
                     <h1>Sign in</h1>
                     <input id="signin-username" class="inputmargin"  name="username" type="text" placeholder="Username">
                     <input id="signin-password" class="inputmargin"  name="password" type="password" placeholder="Password">
-                    <a href="#">Forgot your password?</a>
+                    <a href="forget_password.php">Forgot your password?</a>
                     <button type="submit">Sign In</button>
                     <p class="mobile">
                         New user? Click <a id="signUp-Mobile" href="#">Here</a>.
                     </p>
-                    <div id="signin-error" class="error"></div>
+                    <div id="signin-error" class="error" style="color:red;">
+                    <?php echo $error;?>
+                    </div>
                 </form>
             </div>
             <div class="overlay-container">

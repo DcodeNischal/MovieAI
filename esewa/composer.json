@@ -1,0 +1,11 @@
+{
+    "require": {
+        "league/omnipay": "^3.2",
+        "sudiptpa/omnipay-esewa": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
