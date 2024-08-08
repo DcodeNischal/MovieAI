@@ -49,8 +49,8 @@ session_start();
                         <ul>
                             <li>
                                 <h4>Balkumari, lalitpur</h4>
-                                <p style="font-size:20px;">Kuber Cinemas, Ncit College, Balkumari. <br>Email: kubercinemas.com.np <br />+977-9823192305
-                                    <br />+977-9862405060
+                                <p style="font-size:20px;">Kuber Cinemas, Ncit College, Balkumari. <br>Email: kubercinemas.com.np <br />+977
+                                    <br />+977-
                                 <br>
                                 </p>
                             </li>
